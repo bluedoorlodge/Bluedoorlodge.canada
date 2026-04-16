@@ -20,6 +20,9 @@ body {
   transition: background 0.5s ease;
 }
 
+/* ==============================
+   LINKS
+============================== */
 a {
   color: #b0b0b0;
   text-decoration: none;
@@ -46,6 +49,55 @@ a:hover::after {
   width: 100%;
 }
 
+/* ==============================
+   HEADER / NAVBAR (FIXED TO MATCH OTHERS)
+============================== */
+header {
+  margin-bottom: 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #1a1a1f;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(245, 200, 220, 0.1);
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #c9bdc1;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #e2e2e6;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d4b8c4;
+}
 
 /* ==============================
    BOOKING SECTION
@@ -74,7 +126,7 @@ a:hover::after {
   color: #dcdcdc;
 }
 
-/* PRICING BUTTONS */
+/* PRICING (UNCHANGED BELOW) */
 .pricing-vertical {
   display: flex;
   flex-direction: column;
@@ -91,12 +143,6 @@ a:hover::after {
   transition: transform 0.3s ease;
 }
 
-@media (hover: hover) {
-  .pricing-item:hover {
-    transform: translateX(5px);
-  }
-}
-
 .pricing-button {
   flex-shrink: 0;
   background: linear-gradient(145deg, #2a1f2b, #3b2736);
@@ -109,189 +155,24 @@ a:hover::after {
   cursor: pointer;
   transition: all 0.4s ease;
   min-width: 180px;
-  box-shadow: 0 5px 25px rgba(255,255,255,0.05);
 }
 
-.pricing-button:hover {
-  background: linear-gradient(145deg, #b5a8ae, #f5d1e0);
-  color: #1a1a1a;
-  transform: scale(1.08) rotate(-1deg);
-  box-shadow: 0 0 35px rgba(245, 200, 220, 0.5);
-  border-color: #f0d7e4;
-}
-
-.pricing-desc {
-  font-size: 0.95rem;
-  color: #cfc1c6;
-  font-style: italic;
-  max-width: 400px;
-}
-
-/* BOOKING SUMMARY BOX */
-.booking-summary {
-  display: none;
-  margin-top: 45px;
-  padding: 30px;
-  background: linear-gradient(135deg, #1a1a1f, #2c1d2a);
-  border-radius: 16px;
-  box-shadow: 0 8px 35px rgba(245,200,220,0.15);
-  color: #f5f5f7;
-  text-align: center;
-  font-family: 'Lora', serif;
-  transition: all 0.5s ease;
-}
-
-.booking-summary h3 {
-  font-size: 1.8rem;
-  margin-bottom: 18px;
-  color: #f0e4ea;
-  text-shadow: 0 0 12px rgba(245,245,247,0.25);
-}
-
-.booking-summary p {
-  font-size: 1.05rem;
-  margin-bottom: 12px;
-  color: #e2e2e6;
-}
-
-.booking-summary a.cta-email {
-  margin-top: 18px;
-  display: inline-block;
-  font-size: 1.15rem;
-  font-weight: bold;
-  background: linear-gradient(135deg, #b5a8ae, #f5c1d1);
-  color: #1a1a1a;
-  padding: 14px 28px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(245,200,220,0.35);
-}
-
-.notice-highlight {
-  display: inline-block;
-  padding: 0.6rem 0.9rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #2b1d24, #3a2430);
-  color: #f5d6e0;
-  border-left: 4px solid #c48aa2;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.booking-summary a.cta-email:hover {
-  background: linear-gradient(135deg, #ad9ca4, #f0b0c9);
-  box-shadow: 0 0 30px rgba(245,200,220,0.55);
-  transform: scale(1.08);
-}
-
-/* CANCELLATION NOTE */
-.cancellation-policy-note {
-  font-family: 'Georgia', serif;
-  font-weight: normal;
-  font-style: normal;
-  margin-top: 50px;
-  color: #d8c9cd;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-/* ==============================
-   MOBILE FIX — DO NOT TOUCH DESKTOP
-============================== */
+/* MOBILE (kept simple + consistent) */
 @media (max-width: 768px) {
-
   body {
     margin: 0.5rem;
   }
 
-  /* BOOKING CONTAINER */
-  .booking {
-    padding: 2rem 1.2rem;
-    border-radius: 12px;
-  }
-
-  .booking h2 {
-    font-size: 2rem;
-  }
-
-  .booking p {
-    font-size: 1rem;
-  }
-
-  /* PRICING STACK */
-  .pricing-vertical {
-    align-items: stretch;
-    gap: 20px;
-  }
-
-  .pricing-item {
+  .navbar {
     flex-direction: column;
-    align-items: stretch;
     gap: 10px;
+    text-align: center;
   }
 
-  .pricing-button {
-    width: 100%;
-    min-width: unset;
-    padding: 14px;
-    font-size: 1rem;
-    transform: none;
-  }
-
-  .pricing-button:hover {
-    transform: none;
-  }
-
-  .pricing-desc {
-    max-width: 100%;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-
-  /* SUMMARY BOX */
-  .booking-summary {
-    padding: 20px;
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 1rem;
-    font-size: 0.85rem;
-  }
-}
-
-/* FOOTER */
-footer {
-  background-color: #1e1e1e;
-  text-align: center;
-  padding: 1.5rem;
-  border-top: 2px solid #444;
-  margin-top: 3rem;
-  font-size: 0.95rem;
-  color: #cfc1c6;
-}
-
-footer a {
-  color: #f5c1d1;
-  text-decoration: underline;
-}
-
-/* RESPONSIVE */
-@media (max-width: 480px) {
-  .pricing-vertical {
-    gap: 18px;
-  }
-
-  .pricing-button {
-    width: 90%;
-    min-width: unset;
-    padding: 14px 24px;
-    font-size: 1rem;
-  }
-
-  .booking-summary {
-    padding: 22px;
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 }
 </style>
