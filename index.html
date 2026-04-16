@@ -7,99 +7,84 @@
   <title>Blue Door Dungeon</title>
   <link rel="stylesheet" href="style.css" />
     <!-- Add your CSS here -->
-    <style>
-      /* Initially hide all toggle sections */
-      .toggle-section {
-          opacity: 0;
-          visibility: hidden;
-          transition: opacity 1s ease-in-out;
-      }
-/* ==============================
-   MOBILE FIX — DO NOT TOUCH DESKTOP
-============================== */
-@media (max-width: 768px) {
-
-  body {
-    margin: 0.5rem;
+   <style>
+  /* Initially hide all toggle sections */
+  .toggle-section {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease-in-out;
   }
 
-  /* NAVBAR */
-  .navbar {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
+  /* Make visible sections fade in */
+  .toggle-section.visible {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 1s ease-in-out;
   }
 
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    font-size: 0.95rem;
-  }
+  /* MOBILE FIX — DO NOT TOUCH DESKTOP */
+  @media (max-width: 768px) {
 
-  /* BOOKING CONTAINER */
-  .booking {
-    padding: 2rem 1.2rem;
-    border-radius: 12px;
-  }
+    body {
+      margin: 0.5rem;
+    }
 
-  .booking h2 {
-    font-size: 2rem;
-  }
+    /* BOOKING CONTAINER */
+    .booking {
+      padding: 2rem 1.2rem;
+      border-radius: 12px;
+    }
 
-  .booking p {
-    font-size: 1rem;
-  }
+    .booking h2 {
+      font-size: 2rem;
+    }
 
-  /* PRICING STACK */
-  .pricing-vertical {
-    align-items: stretch;
-    gap: 20px;
-  }
+    .booking p {
+      font-size: 1rem;
+    }
 
-  .pricing-item {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
+    /* PRICING STACK */
+    .pricing-vertical {
+      align-items: stretch;
+      gap: 20px;
+    }
 
-  .pricing-button {
-    width: 100%;
-    min-width: unset;
-    padding: 14px;
-    font-size: 1rem;
-    transform: none;
-  }
+    .pricing-item {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
 
-  .pricing-button:hover {
-    transform: none;
-  }
+    .pricing-button {
+      width: 100%;
+      min-width: unset;
+      padding: 14px;
+      font-size: 1rem;
+      transform: none;
+    }
 
-  .pricing-desc {
-    max-width: 100%;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
+    .pricing-button:hover {
+      transform: none;
+    }
 
-  /* SUMMARY BOX */
-  .booking-summary {
-    padding: 20px;
-  }
+    .pricing-desc {
+      max-width: 100%;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
 
-  /* FOOTER */
-  footer {
-    padding: 1rem;
-    font-size: 0.85rem;
-  }
-}
+    /* SUMMARY BOX */
+    .booking-summary {
+      padding: 20px;
+    }
 
-      /* Make visible sections fade in */
-      .toggle-section.visible {
-          opacity: 1;
-          visibility: visible;
-          transition: opacity 1s ease-in-out;
-      }
-  </style>
+    /* FOOTER */
+    footer {
+      padding: 1rem;
+      font-size: 0.85rem;
+    }
+  }
+</style>
 </head>
 <body>
   <header>
