@@ -684,3 +684,85 @@ li {
   border-radius: 14px;
   margin-top: 1rem;
 }
+/* ==============================
+   PRICING SECTION (PREMIUM UPGRADE)
+============================== */
+
+.pricing-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* EACH PRICE BLOCK BECOMES A CARD */
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.3s ease;
+}
+
+.pricing-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 184, 196, 0.4);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+/* BUTTON BECOMES THE PRICE BADGE */
+.pricing-button {
+  background: linear-gradient(135deg, #b5a8ae, #f5c1d1);
+  color: #111;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 14px 22px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  min-width: 200px;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 25px rgba(245, 193, 209, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* STRONG HOVER = PREMIUM FEEL */
+.pricing-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(245, 193, 209, 0.45);
+}
+
+/* DESCRIPTION */
+.pricing-desc {
+  flex: 1;
+  margin-left: 1.5rem;
+
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ==============================
+   MAKE PRICE TEXT POP EVEN MORE
+============================== */
+
+.pricing-button::after {
+  content: " MEMBERSHIP";
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.7;
+  margin-left: 6px;
+}
