@@ -2,60 +2,53 @@
    ROOT VARIABLES
 ============================== */
 :root {
-  --bg: #0b0b0f;
-  --panel: rgba(20, 20, 24, 0.75);
-  --panel-solid: #1a1a1f;
-
-  --text-primary: #f5f5f7;
-  --text-secondary: #e2e2e6;
-  --text-muted: #b8b8be;
-  --text-accent: #d4b8c4;
-
-  --border: rgba(255,255,255,0.06);
-  --shadow: rgba(0,0,0,0.4);
+  --bg: #0b0b0b;
+  --panel: rgba(25, 15, 25, 0.85);
+  --text: #e2e2e6;
+  --muted: #b8b8be;
+  --accent: #d4b8c4;
 }
 
 /* ==============================
-   RESET
+   GLOBAL RESET
 ============================== */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background: radial-gradient(circle at top right, #1c1c1c, #0b0b0b);
+  color: var(--text);
+  line-height: 1.7;
+  letter-spacing: 0.3px;
 }
 
 /* ==============================
-   BASE
+   LINKS
 ============================== */
-body {
-  font-family: 'Lora', serif;
-  background: radial-gradient(circle at top right, #1c1c1c, var(--bg));
-  color: var(--text-secondary);
-  line-height: 1.7;
-  letter-spacing: 0.3px;
-  min-height: 100vh;
-}
-
 a {
-  color: var(--text-muted);
+  color: var(--muted);
   text-decoration: none;
   position: relative;
-  transition: 0.25s ease;
-}
-
-a:hover {
-  color: var(--text-secondary);
+  transition: 0.3s;
 }
 
 a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
-  width: 0%;
+  bottom: -4px;
+  width: 0;
   height: 1px;
-  background: var(--text-accent);
-  transition: 0.3s ease;
+  background: var(--accent);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--text);
 }
 
 a:hover::after {
@@ -63,7 +56,7 @@ a:hover::after {
 }
 
 /* ==============================
-   HEADER / NAVBAR (CLEAN PRO)
+   HEADER / NAVBAR (CLEAN + MODERN)
 ============================== */
 header {
   padding: 1rem;
@@ -74,47 +67,45 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  padding: 0.9rem 1.5rem;
-
-  background: var(--panel);
+  padding: 0.9rem 1.2rem;
+  background: rgba(20, 20, 24, 0.75);
   backdrop-filter: blur(12px);
 
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: 14px;
 
-  box-shadow: 0 10px 30px var(--shadow);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-
-  font-size: 1.2rem;
+  gap: 10px;
   font-weight: 600;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  color: var(--text);
 }
 
 .logo-img {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   object-fit: cover;
   border-radius: 6px;
 }
 
 .nav-links {
-  display: flex;
-  gap: 1.5rem;
   list-style: none;
+  display: flex;
+  gap: 1.4rem;
 }
 
 .nav-links a {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .nav-links a:hover {
-  color: var(--text-secondary);
+  color: var(--text);
 }
 
 /* ==============================
@@ -125,27 +116,122 @@ header {
   flex-direction: column-reverse;
   align-items: center;
   text-align: center;
-
   min-height: 90vh;
-  padding: 4rem 1.5rem;
+  padding: 3rem 1rem;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* ✅ FIXED IMAGE HANDLING (IMPORTANT) */
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: 0.6s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.07);
 }
 
 .hero h1 {
   font-size: 3rem;
-  color: var(--text-primary);
+  color: #f5eef2;
 }
 
 .hero p {
-  margin-top: 1rem;
-  color: var(--text-muted);
   font-size: 1.2rem;
+  color: var(--muted);
 }
 
 /* ==============================
-   SECTIONS
+   BUTTONS
 ============================== */
-section {
-  padding: 2rem 1.5rem;
+.cta-button,
+.reveal-btn,
+.cta-email {
+  display: inline-block;
+  background: linear-gradient(135deg, #b5a8ae, #f5c1d1);
+  color: #111;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(245,200,220,0.25);
+}
+
+.cta-button:hover,
+.reveal-btn:hover,
+.cta-email:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(245,200,220,0.45);
+}
+
+/* ==============================
+   INTRO
+============================== */
+.intro {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.intro p {
+  color: var(--muted);
+}
+
+/* ==============================
+   ROOMS (FIXED IMAGE FRAMING)
+============================== */
+.rooms {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.room-item {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  transition: 0.3s;
+}
+
+.room-item:hover {
+  transform: translateY(-5px);
+}
+
+/* ✅ FIXED IMAGE FRAME SYSTEM */
+.room-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: #111;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.room-item:hover .room-image img {
+  transform: scale(1.08);
+}
+
+.room-description {
+  padding: 1.2rem;
 }
 
 /* ==============================
@@ -153,107 +239,10 @@ section {
 ============================== */
 .booking {
   max-width: 900px;
-  margin: auto;
-
-  padding: 2.5rem;
-  border-radius: 16px;
-
+  margin: 3rem auto;
+  padding: 2rem;
   background: var(--panel);
-  border: 1px solid var(--border);
-
-  box-shadow: 0 0 40px rgba(0,0,0,0.25);
-}
-
-.booking h2 {
-  font-size: 2rem;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-
-/* ==============================
-   BUTTONS
-============================== */
-button,
-.cta-button,
-.pricing-button {
-  background: linear-gradient(135deg, #b5a8ae, #f5c1d1);
-  color: #1a1a1a;
-
-  border: none;
-  border-radius: 10px;
-
-  padding: 12px 22px;
-  font-weight: 600;
-
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-button:hover,
-.cta-button:hover,
-.pricing-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(255,200,220,0.3);
-}
-
-/* ==============================
-   PRICING
-============================== */
-.pricing-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.pricing-item {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-/* ==============================
-   IMAGE FRAME SYSTEM (FIXED)
-============================== */
-.image-frame {
-  width: 100%;
   border-radius: 14px;
-  overflow: hidden;
-
-  border: 1px solid var(--border);
-  background: rgba(0,0,0,0.2);
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  transition: 0.4s ease;
-}
-
-.image-frame img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-
-  transition: transform 0.6s ease, filter 0.6s ease;
-}
-
-.image-frame:hover {
-  transform: scale(1.02);
-}
-
-.image-frame:hover img {
-  transform: scale(1.06);
-  filter: brightness(1.05);
-}
-
-/* ==============================
-   BOOKING SUMMARY
-============================== */
-.booking-summary {
-  margin-top: 2rem;
-  padding: 1.5rem;
-
-  background: var(--panel-solid);
-  border-radius: 12px;
 }
 
 /* ==============================
@@ -263,21 +252,16 @@ footer {
   text-align: center;
   padding: 2rem;
   margin-top: 3rem;
-
-  background: #111;
-  border-top: 1px solid var(--border);
-
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 /* ==============================
-   MOBILE
+   MOBILE FIX
 ============================== */
 @media (max-width: 768px) {
-
   .navbar {
     flex-direction: column;
-    gap: 1rem;
+    gap: 10px;
   }
 
   .nav-links {
@@ -286,15 +270,10 @@ footer {
   }
 
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
-  .booking {
-    padding: 1.5rem;
-  }
-
-  .pricing-item {
-    flex-direction: column;
-    align-items: stretch;
+  .room-image {
+    height: 200px;
   }
 }
