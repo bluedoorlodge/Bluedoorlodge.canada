@@ -360,3 +360,216 @@ footer {
     max-height: 240px;
   }
 }
+/* =====================================================
+   PREMIUM BOOKING UPGRADE (SHOPIFY-STYLE LAYER)
+===================================================== */
+
+/* ==============================
+   PAGE BACKDROP ENHANCEMENT
+============================== */
+.booking {
+  position: relative;
+  overflow: hidden;
+}
+
+.booking::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(245,200,220,0.08), transparent 60%);
+  pointer-events: none;
+}
+
+/* ==============================
+   HEADLINE UPGRADE
+============================== */
+.booking h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  color: #f0e4ea;
+  text-shadow: 0 0 18px rgba(245,200,220,0.15);
+}
+
+/* ==============================
+   PARAGRAPH IMPROVEMENT
+============================== */
+.booking p {
+  font-size: 1.05rem;
+  color: #d8d8dd;
+  line-height: 1.8;
+}
+
+/* ==============================
+   NOTICE BOX (IMPORTANT INFO STYLE)
+============================== */
+.notice-highlight {
+  display: block;
+  padding: 14px 16px;
+  margin: 12px 0;
+  background: linear-gradient(135deg, rgba(181,168,174,0.12), rgba(245,193,209,0.08));
+  border-left: 3px solid #d4b8c4;
+  border-radius: 10px;
+  color: #f0e4ea;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ==============================
+   PRICING SECTION (SHOPIFY CARDS)
+============================== */
+.pricing-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.2rem;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.pricing-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212,184,196,0.35);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+/* ==============================
+   PRICING BUTTON (PREMIUM CTA STYLE)
+============================== */
+.pricing-button {
+  background: linear-gradient(135deg, #b5a8ae, #f5c1d1);
+  color: #111;
+
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+
+  font-weight: 700;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 8px 25px rgba(245,193,209,0.15);
+}
+
+.pricing-button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 30px rgba(245,193,209,0.25);
+}
+
+/* ==============================
+   DESCRIPTION TEXT
+============================== */
+.pricing-desc {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 0.95rem;
+  color: #cfcfd6;
+  line-height: 1.5;
+}
+
+/* ==============================
+   BOOKING SUMMARY (PREMIUM PANEL)
+============================== */
+.booking-summary {
+  display: none;
+  max-width: 700px;
+  margin: 2rem auto;
+
+  padding: 2rem;
+  border-radius: 16px;
+
+  background: rgba(20,20,24,0.85);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.booking-summary h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #f0e4ea;
+}
+
+/* summary text */
+.booking-summary p {
+  margin-bottom: 10px;
+  color: #dcdce2;
+}
+
+/* ==============================
+   ANIMATION
+============================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================
+   FOOTER POLISH
+============================== */
+footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  text-align: center;
+
+  color: #a9a9b2;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #d4b8c4;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   MOBILE POLISH
+============================== */
+@media (max-width: 768px) {
+
+  .pricing-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pricing-desc {
+    margin-left: 0;
+  }
+
+  .booking h2 {
+    font-size: 1.8rem;
+  }
+
+  .booking-summary {
+    width: 90%;
+  }
+}
