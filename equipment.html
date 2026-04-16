@@ -121,16 +121,53 @@
   </footer>
 
   <script>
-    const sliderTrack = document.getElementById('sliderTrack');
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* =========================
+     IMAGE ROTATION (MAIN IMAGE)
+  ========================= */
+  const equipmentImg = document.getElementById('equipment-img');
+
+  if (equipmentImg) {
+    const images = [
+      'images/image1.jpg',
+      'images/image2.jpg',
+      'images/image3.jpg',
+      'images/image4.jpg'
+    ];
+
+    let index = 0;
+
+    function rotateImage() {
+      index = (index + 1) % images.length;
+      equipmentImg.src = images[index];
+    }
+
+    setInterval(rotateImage, 4000);
+  }
+
+
+  /* =========================
+     SLIDER FUNCTIONALITY
+  ========================= */
+  const sliderTrack = document.getElementById('sliderTrack');
+
+  if (sliderTrack) {
     let currentIndex = 0;
 
-    function moveSlide(direction) {
+    window.moveSlide = function(direction) {
       const slides = sliderTrack.children;
       const totalSlides = slides.length;
+
       currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
-      sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-  </script>
+
+      sliderTrack.style.transform =
+        `translateX(-${currentIndex * 100}%)`;
+    };
+  }
+
+});
+</script>
 </body>
 </html>
 
