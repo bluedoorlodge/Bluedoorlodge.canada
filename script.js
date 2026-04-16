@@ -1,20 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ==============================
-     TESTIMONIAL ROTATION
-  ============================== */
-  const testimonials = document.querySelectorAll('.testimonial');
-  let currentTestimonialIndex = 0;
+/* ==============================
+   TESTIMONIAL ROTATION (FINAL)
+============================== */
+const testimonials = document.querySelectorAll('.testimonial');
 
-  if (testimonials.length > 0) {
-    testimonials[currentTestimonialIndex].classList.add('active');
+if (testimonials.length > 0) {
+  let index = 0;
 
-    setInterval(() => {
-      testimonials[currentTestimonialIndex].classList.remove('active');
-      currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
-      testimonials[currentTestimonialIndex].classList.add('active');
-    }, 5000);
-  }
+  // force clean start
+  testimonials.forEach(t => t.classList.remove('active'));
+  testimonials[0].classList.add('active');
+
+  setInterval(() => {
+    testimonials[index].classList.remove('active');
+
+    index = (index + 1) % testimonials.length;
+
+    testimonials[index].classList.add('active');
+
+  }, 5000);
+}
 
   /* ==============================
      TOGGLE SECTIONS (FADE)
