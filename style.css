@@ -13,9 +13,9 @@
    GLOBAL RESET
 ============================== */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -24,6 +24,14 @@ body {
   color: var(--text);
   line-height: 1.7;
   letter-spacing: 0.3px;
+}
+
+/* ==============================
+   GLOBAL IMAGE FIX (VERY IMPORTANT)
+============================== */
+img {
+  max-width: 100%;
+  display: block;
 }
 
 /* ==============================
@@ -56,7 +64,7 @@ a:hover::after {
 }
 
 /* ==============================
-   HEADER / NAVBAR (CLEAN + MODERN)
+   HEADER / NAVBAR
 ============================== */
 header {
   padding: 1rem;
@@ -100,8 +108,8 @@ header {
 }
 
 .nav-links a {
-  font-size: 0.95rem;
   color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
@@ -127,23 +135,19 @@ header {
   border-radius: 14px;
 }
 
-/* ✅ FIXED IMAGE HANDLING (IMPORTANT) */
 .hero-image img {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
-  transform: scale(1.02);
   transition: 0.6s ease;
 }
 
 .hero-image img:hover {
-  transform: scale(1.07);
+  transform: scale(1.05);
 }
 
 .hero h1 {
   font-size: 3rem;
-  color: #f5eef2;
 }
 
 .hero p {
@@ -164,14 +168,12 @@ header {
   border-radius: 10px;
   font-weight: 700;
   transition: 0.3s;
-  box-shadow: 0 0 20px rgba(245,200,220,0.25);
 }
 
 .cta-button:hover,
 .reveal-btn:hover,
 .cta-email:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(245,200,220,0.45);
 }
 
 /* ==============================
@@ -188,7 +190,7 @@ header {
 }
 
 /* ==============================
-   ROOMS (FIXED IMAGE FRAMING)
+   ROOMS (FIXED IMAGES)
 ============================== */
 .rooms {
   max-width: 1100px;
@@ -197,8 +199,6 @@ header {
 }
 
 .room-item {
-  display: flex;
-  flex-direction: column;
   background: rgba(255,255,255,0.03);
   border-radius: 14px;
   overflow: hidden;
@@ -210,7 +210,7 @@ header {
   transform: translateY(-5px);
 }
 
-/* ✅ FIXED IMAGE FRAME SYSTEM */
+/* IMAGE FIX (CRITICAL) */
 .room-image {
   width: 100%;
   height: 280px;
@@ -222,7 +222,6 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   transition: transform 0.5s ease;
 }
 
@@ -246,6 +245,59 @@ header {
 }
 
 /* ==============================
+   EQUIPMENT (FIXED IMAGES + SLIDER)
+============================== */
+.equipment-display {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+/* banner image */
+.top-banner-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* item cards */
+.item-list {
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* equipment images */
+.item-list img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+/* slider fix */
+.slider-container {
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-track img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* ==============================
    FOOTER
 ============================== */
 footer {
@@ -256,7 +308,7 @@ footer {
 }
 
 /* ==============================
-   MOBILE FIX
+   MOBILE
 ============================== */
 @media (max-width: 768px) {
   .navbar {
@@ -275,5 +327,9 @@ footer {
 
   .room-image {
     height: 200px;
+  }
+
+  .slider-track img {
+    height: 250px;
   }
 }
