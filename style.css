@@ -573,3 +573,114 @@ footer a:hover {
     width: 90%;
   }
 }
+/* ==============================
+   TYPOGRAPHY SYSTEM (GLOBAL TEXT SPACING)
+============================== */
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+
+p {
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+  color: var(--muted);
+}
+
+/* Make long content sections readable */
+section {
+  padding: 3rem 1.5rem;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Better spacing for lists */
+ul, ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+/* ==============================
+   HERO TEXT SPACING (CLEANER LAYOUT)
+============================== */
+
+.hero-text h1 {
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* ==============================
+   INTRO SECTION (YOUR BIG BLOCK OF TEXT)
+============================== */
+
+.intro {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro p {
+  margin-bottom: 1.4rem;
+}
+
+.intro h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ==============================
+   TESTIMONIAL SPACING FIX
+============================== */
+
+.testimonial-container {
+  margin-top: 2rem;
+}
+
+.testimonial {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+}
+
+/* ==============================
+   FEATURES SECTION CLEAN SPACING
+============================== */
+
+.features ul {
+  max-width: 700px;
+  margin: 1rem auto;
+}
+
+.features li {
+  padding: 0.4rem 0;
+}
+
+/* ==============================
+   IMAGE SECTION SPACING
+============================== */
+
+.image-section {
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+.philosophy-image {
+  max-width: 100%;
+  border-radius: 14px;
+  margin-top: 1rem;
+}
