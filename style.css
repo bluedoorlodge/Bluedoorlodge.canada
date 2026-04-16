@@ -332,4 +332,25 @@ footer {
   .slider-track img {
     height: 250px;
   }
+.testimonial-container {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.8s ease;
+}
+
+.testimonial.active {
+  opacity: 1;
+  visibility: visible;
 }
