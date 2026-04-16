@@ -1,57 +1,72 @@
-/* ============================== */
-/* ROOT VARIABLES */
-/* ============================== */
+/* ==============================
+   ROOT VARIABLES
+============================== */
 :root {
+  --bg: #0b0b0f;
+  --panel: rgba(20, 20, 24, 0.75);
+  --panel-solid: #1a1a1f;
+
   --text-primary: #f5f5f7;
   --text-secondary: #e2e2e6;
   --text-muted: #b8b8be;
   --text-accent: #d4b8c4;
-}
 
-/* ============================== */
-/* GLOBAL STYLES */
-/* ============================== */
-body {
-  margin: 0.5;
-  font-family: 'Lora', serif;
-  background-color: #111;
-  color: var(--text-secondary);
-  line-height: 1.7;
-
-  background-image: radial-gradient(circle at top right, #1c1c1c, #0b0b0b);
-  letter-spacing: 0.4px;
-  transition: background 0.5s ease;
-}
-
-p, li {
-  color: var(--text-secondary);
-  max-width: 70ch;
-}
-
-/* ============================== */
-/* LINKS */
-/* ============================== */
-a {
-  color: var(--text-accent);
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-a:hover {
-  color: #f0d7e4;
-  text-shadow: 0 0 8px rgba(240, 215, 228, 0.35);
-}
-
-/* ============================== */
-/* HEADER / NAVBAR (FIXED & SINGLE SOURCE) */
-/* ============================== */
-header {
-  margin-bottom: 2rem;
+  --border: rgba(255,255,255,0.06);
+  --shadow: rgba(0,0,0,0.4);
 }
 
 /* ==============================
-   NAVBAR (PROFESSIONAL / LUXURY CLEAN)
+   RESET / BASE
 ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background: radial-gradient(circle at top right, #1c1c1c, var(--bg));
+  color: var(--text-secondary);
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--text-secondary);
+}
+
+/* underline animation */
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 1px;
+  background: var(--text-accent);
+  transition: 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* ==============================
+   HEADER / NAVBAR (FIXED + PROFESSIONAL)
+============================== */
+header {
+  padding: 1rem;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -59,287 +74,201 @@ header {
 
   padding: 0.9rem 1.5rem;
 
-  background: rgba(20, 20, 24, 0.85);
-  backdrop-filter: blur(10px);
+  background: var(--panel);
+  backdrop-filter: blur(12px);
 
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
   border-radius: 14px;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px var(--shadow);
 }
 
-/* ==============================
-   LOGO
-============================== */
 .logo {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
 
   color: var(--text-secondary);
 }
 
 .logo-img {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   object-fit: cover;
-
   border-radius: 6px;
-  opacity: 0.95;
 }
 
-/* ==============================
-   NAV LINKS
-============================== */
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 1.6rem;
-
-  margin: 0;
-  padding: 0;
+  gap: 1.5rem;
+  list-style: none;
 }
 
 .nav-links a {
-  position: relative;
-
   font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-
   color: var(--text-muted);
-  text-decoration: none;
-
-  transition: color 0.25s ease;
-}
-
-/* subtle underline (no aggressive glow) */
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-
-  width: 0%;
-  height: 1px;
-
-  background: var(--text-accent);
-  transition: width 0.3s ease;
+  transition: 0.25s ease;
 }
 
 .nav-links a:hover {
   color: var(--text-secondary);
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+/* ==============================
+   HERO
+============================== */
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+
+  min-height: 90vh;
+  padding: 4rem 1.5rem;
+
+  color: var(--text-primary);
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+/* ==============================
+   SECTIONS
+============================== */
+section {
+  padding: 2rem 1.5rem;
+}
+
+/* ==============================
+   BOOKING (CLEAN PANEL STYLE)
+============================== */
+.booking {
+  max-width: 900px;
+  margin: auto;
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  padding: 2.5rem;
+
+  box-shadow: 0 0 40px rgba(0,0,0,0.25);
+}
+
+.booking h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.booking p {
+  color: var(--text-secondary);
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+button,
+.cta-button,
+.pricing-button {
+  background: linear-gradient(135deg, #b5a8ae, #f5c1d1);
+  color: #1a1a1a;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 12px 24px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover,
+.cta-button:hover,
+.pricing-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255,200,220,0.3);
+}
+
+/* ==============================
+   PRICING LAYOUT
+============================== */
+.pricing-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pricing-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* ==============================
+   SUMMARY BOX
+============================== */
+.booking-summary {
+  margin-top: 2rem;
+  padding: 1.5rem;
+
+  background: var(--panel-solid);
+  border-radius: 12px;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  background: #111;
+  border-top: 1px solid var(--border);
+
+  color: var(--text-muted);
 }
 
 /* ==============================
    MOBILE
 ============================== */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+
   .navbar {
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
     text-align: center;
-    padding: 1rem;
   }
 
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.9rem;
   }
 
-  .logo {
-    font-size: 1rem;
+  .hero h1 {
+    font-size: 2.2rem;
   }
 
-  .logo-img {
-    width: 34px;
-    height: 34px;
+  .booking {
+    padding: 1.5rem;
   }
-}
-/* ============================== */
-/* HERO SECTION */
-/* ============================== */
-.hero {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 90vh;
-  overflow: hidden;
-  background: #0b0b0b;
-  color: var(--text-primary);
-  text-align: center;
-  padding: 60px 20px;
-  font-family: 'Playfair Display', serif;
-}
 
-.hero-image {
-  position: relative;
-  width: 100%;
-  max-height: 70vh;
-  overflow: hidden;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(95%) contrast(105%);
-  transition: transform 2s ease, filter 1.8s ease;
-}
-
-.hero-image img:hover {
-  transform: scale(1.05);
-  filter: brightness(105%) contrast(110%);
-}
-
-.hero-text {
-  z-index: 2;
-  position: relative;
-  padding: 30px 0;
-}
-
-.hero h1 {
-  font-size: 3.2em;
-  color: #f6eef3;
-  margin-bottom: 10px;
-  text-shadow: 0 0 8px rgba(245,245,247,0.2), 0 0 15px rgba(245,245,247,0.1);
-}
-
-.hero p {
-  font-size: 1.3em;
-  color: #e6d8df;
-  margin-bottom: 30px;
-}
-
-/* ============================== */
-/* CTA BUTTONS */
-/* ============================== */
-.cta-button, .reveal-btn, .cta-email {
-  position: relative;
-  overflow: hidden;
-  background: #b5a8ae;
-  color: #1a1a1a;
-  padding: 14px 32px;
-  border-radius: 8px;
-  font-size: 1.2em;
-  font-weight: bold;
-  transition: all 0.4s ease;
-  box-shadow: 0 0 20px rgba(255, 150, 203, 0.3);
-}
-
-.cta-button:hover,
-.reveal-btn:hover,
-.cta-email:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 35px rgba(255, 200, 220, 0.5);
-}
-
-/* ============================== */
-/* INTRO SECTION */
-/* ============================== */
-.intro {
-  max-width: 960px;
-  margin: 40px 20px;
-  font-family: 'Arial', sans-serif;
-  line-height: 1.5;
-}
-
-.intro h2, .intro h3 {
-  color: var(--text-primary);
-}
-
-.intro p, .intro li {
-  color: #ededf1;
-  font-size: 0.9rem;
-}
-
-/* ============================== */
-/* TESTIMONIALS */
-/* ============================== */
-.testimonials {
-  padding: 1rem 1.7rem;
-  text-align: center;
-}
-
-.testimonials h2 {
-  color: var(--text-accent);
-}
-
-/* ============================== */
-/* ROOMS */
-/* ============================== */
-.rooms h2 {
-  font-size: 2rem;
-  color: #a78f8d;
-}
-
-.room-item {
-  display: flex;
-  flex-direction: column;
-}
-
-/* ============================== */
-/* BOOKING */
-/* ============================== */
-.booking {
-  background-color: #1a1a1f;
-  padding: 2.5rem 1.7rem;
-  border-radius: 10px;
-  margin: 3rem 0;
-}
-
-/* ============================== */
-/* FOOTER */
-/* ============================== */
-footer {
-  background-color: #1e1e1e;
-  text-align: center;
-  padding: 1.5rem;
-  border-top: 2px solid #444;
-  margin-top: 3rem;
-}
-
-footer a {
-  color: var(--text-accent);
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ============================== */
-/* ANIMATIONS */
-/* ============================== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeIn 1.2s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .pricing-item {
+    flex-direction: column;
+    align-items: stretch;
   }
-}
-
-.pulse {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255,150,203,0.4); }
-  70% { box-shadow: 0 0 0 14px rgba(255,150,203,0); }
-  100% { box-shadow: 0 0 0 0 rgba(255,150,203,0); }
 }
